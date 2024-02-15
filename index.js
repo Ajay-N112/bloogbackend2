@@ -17,7 +17,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: [`${BASE_URL}`],
+  origin: ['http://localhost:3000'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
@@ -26,7 +26,6 @@ app.use(cookieParser());
 
 app.use(express.static('public'))
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/Blog');
 
 // Multer configuration
 const storage = multer.diskStorage({
